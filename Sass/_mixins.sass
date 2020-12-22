@@ -1,0 +1,24 @@
+@mixin button
+    z-index: 5
+    position: absolute
+    //right: 0
+    //bottom: 105px
+    padding: 10px
+    background-color: $hoverColor
+    color: #fff
+    font-weight: 600
+    border: none
+    height: 108px
+    width: 108px
+    border-radius: 50%
+    transition: background-color 0.3s, box-shadow 2s
+    &:focus
+        outline: none
+    &:hover
+        background-color: #EC87C0
+        cursor: pointer
+        box-shadow: 0 0 50px darken($hoverColor, 15%)
+@mixin flex 
+    display: flex
+    justify-content: space-between
+    flex-flow: row wrap

@@ -1,0 +1,440 @@
+@import "mixins"
+@import "variables"
+
+
+.container
+    width: 100%
+    max-width: 1166px
+    margin: 0 auto
+*   
+    box-sizing: border-box
+    font-family: 'Clear Sans'
+    margin: 0
+    padding: 0
+
+.header
+    width: 100%
+    max-width: 100%
+    padding-top: 17px
+    height: 106px
+    &__area
+        display: flex
+        flex-direction: row
+    &__item
+        &:nth-child(1)
+            width: 100%
+            max-width: 22%
+        &:nth-child(2)
+            width: 100%
+            max-width: 33%
+        &:nth-child(3)
+            width: 100%
+            max-width: 35%
+        &:nth-child(4)
+            width: 100%
+            max-width: 5%
+            
+    &__descr p
+        text-align: center
+        color: #3A4047
+        &:nth-child(1)
+            font-size: 16px
+            line-height: 19px
+        &:nth-child(2)
+            margin-top: 11px
+            font-size: 14px
+            line-height: 16px
+            font-weight: 600
+.links
+    max-width: 100%         
+    position: relative
+    height: 100%
+.f_link
+    position: absolute
+    top: 0
+    left: 0
+.s_link
+    position: absolute
+    top: 0
+    right: 0
+.number
+    position: absolute
+    bottom: 15px
+    right: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 30px
+    width: 200px
+    &__arrow
+        display: inline
+    &__num
+        display: inline-block
+        position: relative
+        line-height: 19px
+        font-size: 16px
+        font-weight: 500
+        &:hover
+            cursor: pointer
+            .number__list
+                display: block
+    &__list
+        display: none
+        position: absolute
+        background-color: #f9f9f9
+        min-width: 219px
+        box-shadow: 0px 8px 16px 0px $hoverColor
+        padding: 30px 20px 30px 29px
+        //margin-top: 20px
+        z-index: 5
+        transform: translateX(-60px)
+        transition: all 0.5s
+        border-bottom-left-radius: 20px
+        border-bottom-right-radius: 20px
+    &__list-item
+        //margin: 10px 0
+        transition: color 0.15s
+        &:nth-child(2)
+            margin: 15px 0
+        &:hover
+            color: $hoverColor
+    &__list-block
+        img
+            display: inline
+            vertical-align: middle
+        span
+            display: inline
+            font-size: 16px
+            margin-left: 11px
+            vertical-align: middle
+            font-weight: 400
+.backet
+        margin-top: 14px
+        margin-left: 19px
+nav
+    height: 57px
+    box-shadow: inset 0 0 4px #DCE1E6
+    .container
+        width: 100%
+        max-width: 1200px
+.subheader
+    height: 57px
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    &_link
+        display: inline-block
+        width: 100%
+        max-width: 10%
+        //height: 57px
+        font-size: 16px
+        color: $textColor
+        font-weight: 600
+        text-align: center
+        position: relative
+        padding: 0 10px 0 0
+        margin-right: 10px
+        border-top: 1px solid transparent
+        text-decoration: none
+        transition: color 0.3s
+        &:nth-child(3)
+            max-width: 13%
+        &:nth-child(8)
+            max-width: 5%
+        &::before
+            content: ''
+            display: none
+            width: 100%
+            height: 1px
+            background-color: $hoverColor
+            transform: translateY(-18px)
+
+        &::after
+            position: absolute
+            right: -6px
+            top: 5px
+            content: ''
+            display: block
+            width: 2px
+            height: 13px
+            background-color: rgba(232, 237, 242, 1)
+        &:last-child
+            &::after
+                display: none
+        &:hover
+            text-decoration: none
+            color: $hoverColor
+            &::before
+                display: block
+
+.poligr
+    position: relative
+    background: url('/images/main/bg.png') center ( center / cover) no-repeat
+    min-height: 500px
+    text-align: center
+    padding: 150px 0 140px 0
+    color: #fff
+    .callMe
+        @include button
+        bottom: -50px
+    &_h1
+        font-size: 53px
+        line-height: 67px
+        &::after
+            margin: 10px auto 15px auto
+            content: ''
+            display: block
+            width: 120px
+            height: 2px
+            background-color: #fff
+    &_h4
+        line-height: 29px
+        font-size: 24px
+        font-weight: 400
+    &_btn
+        padding: 13px 22px
+        line-height: 19px
+        background-color: $hoverColor
+        color: #fff
+        font-weight: 600
+        border: none
+        margin-top: 27px
+        border-radius: 2px
+        &:focus
+            outline: none
+        &:hover
+            background-color: lighten($hoverColor, 10%)
+            cursor: pointer
+
+.label
+    margin: 0
+    text-align: center
+    font-size: 36px
+    color: $textColor
+    font-weight: 400
+.prod
+    min-height: 400px
+    padding-top: 29px
+    .container
+        position: relative
+        .callMe
+            @include button
+            right: -100px
+            bottom: 378px
+
+    &__img
+        display: inline-block
+        width: 62px
+        height: 62px
+    &__area
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+    &__item
+        display: flex
+        overflow: hidden
+        width: 31%
+        max-width: 389px
+        margin: 35px 5px 0 5px
+        min-height: 291px
+        padding: 25px 25px
+        border: 1px solid rgba(0, 0, 0, 0.05)
+        &:nth-child(1)
+            .prod__descr-block
+                width: 100%
+                max-width: 100%
+        &:nth-child(3)
+            .prod__descr-block
+                width: 100%
+                max-width: 100%
+    &__descr
+        display: inline-block
+        width: 70%
+        max-width: 70%
+        margin-left: 36px
+        &-block
+            width: 100%
+            max-width: 50%
+            margin-top: 24px
+            display: inline-block
+            float: left
+    &_h5
+        font-size: 16px
+        color: $textColor
+    &_link
+        display: block
+        font-size: 14px
+        color: $textColor
+        margin-bottom: 17px
+        text-decoration: none
+        transition: color 0.3s
+        &:hover
+            text-decoration: underline
+            color: $hoverColor
+
+    
+    
+.we
+    min-height: 280px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+    padding-top: 32px
+    &_title
+        margin-top: 13px
+        text-align: center
+        font-size: 24px
+        color: $textColor
+        font-weight: 400
+    &_descr
+        margin-top: 34px
+        font-size: 14px
+        color: $textColor
+        font-weight: 400
+.news
+    padding-top: 33px
+    min-height: 430px
+    .container
+        width: 100%
+        max-width: 1196px
+    &_area
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+    &_item
+        width: 31%
+        max-width: 398px
+        min-height: 170px
+        margin: 50px 10px 0 10px
+        text-align: center
+        border-top: 1px solid transparent
+        padding: 29px 18px 31px 18px
+        transition: all 0.3s
+        &:hover
+            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.05)
+            border-top: 1px solid $hoverColor 
+            cursor: pointer
+            .news_descr
+                color: $hoverColor
+                text-decoration: underline
+    &_date
+        font-size: 14px
+        color: #BEC7D1
+    &_descr
+        margin-top: 14px
+        font-size: 16px
+        color: $textColor
+    &_btn
+        display: block
+        padding: 6px 22px
+        line-height: 19px
+        background-color: #fff
+        color: $hoverColor
+        font-weight: 400
+        border: 1px solid $hoverColor
+        margin: 51px auto 0 auto
+        transition: color 0.4s, border-color 0.4s
+        &:focus
+            outline: none
+        &:hover
+            color: #EC87C0
+            border-color: #EC87C0
+            cursor: pointer
+.footer
+    position: relative
+    padding: 30px 0
+    height: 190px
+    background-color: rgba(0, 0, 0, 0.05)
+    box-shadow: inset 0 0 4px #DCE1E6
+    .container
+        position: relative
+    &__area
+        @include flex
+    &__item
+        &:nth-child(1)
+            width: 100%
+            max-width: 22%
+        &:nth-child(2)
+            width: 100%
+            max-width: 22%
+            .header__descr p
+                font-size: 14px
+                font-weight: 400
+                text-align: left
+                &:nth-child(2)
+                    margin-top: 40px
+        &:nth-child(3)
+            display: flex
+            justify-content: space-between
+            width: 100%
+            max-width: 23%
+        &:nth-child(4)
+            width: 100%
+            max-width: 21%     
+    &_p
+        font-size: 14px
+        font-weight: 400
+        color: $textColor
+    &_link_block
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &_links
+        font-size: 14px
+        color: $textColor
+        &:hover
+            color: $hoverColor
+            text-decoration: underline
+    &_count
+        height: 100%
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        justify-content: space-between
+    &__top
+        span
+            vertical-align: middle
+            display: inline-block
+            margin-left: 10px
+            font-size: 16px
+        img
+            vertical-align: middle
+            display: inline-block
+            &:nth-child(2)
+                margin-left: 20px
+        .number__list
+            transform: translate(-73px, -191px)
+            box-shadow: 0px -3px 16px 0px $hoverColor
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0
+            border-top-left-radius: 20px
+            border-top-right-radius: 20px
+    &__bottom
+        color: $textColor
+        font-size: 11px
+        img, span
+            display: inline-block
+            vertical-align: middle
+    &_btn
+        display: block
+        padding: 10px 
+        background-color: inherit
+        color: $textColor
+        font-weight: 400
+        border: none
+        font-size: 14px
+        text-decoration: underline
+        transition: color 0.3s
+        &:focus
+            outline: none
+        &:hover
+            color: #EC87C0
+            cursor: pointer
+.footer
+    .callMe
+        @include button
+        right: -117px
+        bottom: 89px
+
+@import "media"
+
+    
